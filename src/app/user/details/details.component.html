@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <form #userForm="ngForm">
+
+        {{userForm.value | json}}
+
+        <div class="form-group">
+            <label> Name </label>
+            <input type="text" class="form-control" name="userName" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label> Email </label>
+            <input type="email" class="form-control" name="email" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label> Phone </label>
+            <input type="tel" class="form-control" name="phone" ngModel>
+        </div>
+
+        <div class="mb-3">
+            <label> Sex </label>
+            <div class="form-check">
+                <input class="form-check-input" ngModel type="radio" name="sex" value="male">
+                <label class="form-check-label"> Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" ngModel type="radio" name="sex" value="female">
+                <label class="form-check-label"> Female</label>
+            </div>
+        </div>
+
+        <div ngModelGroup="address">
+            <label> Address </label>
+            <div class="form-group">
+                <label> Street </label>
+                <input type="text" class="form-control" name="street" ngModel>
+            </div>
+            <div class="form-group">
+                <label> City </label>
+                <input type="text" class="form-control" name="city" ngModel>
+            </div>
+            <div class="form-group">
+                <label> State </label>
+                <input type="text" class="form-control" name="state" ngModel>
+            </div>
+            <div class="form-group">
+                <label> Zip Code </label>
+                <input type="text" class="form-control" name="zipCode" ngModel>
+            </div>
+        </div>
+
+        <div class="form-group"><br>
+            <label>Choose a payment option:</label>
+            <select class="custom-select" name="payment" ngModel>
+                <option *ngFor = "let option of payments"> {{option}} </option>
+            </select>
+        </div>
+
+        <div class="form-check mb-3"><br>
+            <input class="form-check-input" name="subscribe" ngModel type="checkbox">
+            <label class="form-check-label">
+                Send me promotional offers
+            </label>
+        </div>
+
+        <button class="btn btn-primary">Submit Form</button>
+    </form>
+</div>

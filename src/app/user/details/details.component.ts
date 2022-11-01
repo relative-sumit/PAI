@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserClass } from 'src/app/user-class';
 
 @Component({
   selector: 'app-details',
@@ -13,5 +14,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  userModel = new UserClass('', 'abc@abc.in',748474,'male','1999-12-03','',500, true)
 
 }
